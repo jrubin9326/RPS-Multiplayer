@@ -1,0 +1,25 @@
+* {
+    background-color: green;
+}
+
+h1 {
+    text-align:center; 
+    padding: 20px; 
+    background-color: rgb(50,205,50); 
+    border: 1px solid grey; 
+}
+
+input {
+    text-align:center; 
+    display:block; 
+    color:black; 
+   float:left; 
+   margin-left:470px; 
+   border-radius: 4px;
+   border: 2px solid white; 
+
+}
+
+::placeholder {
+    color: white; 
+}
