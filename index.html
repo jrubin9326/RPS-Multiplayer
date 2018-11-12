@@ -13,27 +13,37 @@
   
         <h1>Rock Paper Scissors</h1> 
         <form>
-            <input  type= "text" name= "username" placeholder="Name">
-            <input type = "submit" value = "submitBtn" id="submitBtn" >
+            <input id ="name-input" type= "text" name= "username" placeholder="Name">
+            <input type = "submit" value = "submit" id="submitBtn" >
         </form>
         <br><br>
         <div class = "playerContainer">
-            <div id = "playerOne">Player One:</div>
+            <div >Player One: <span id = "playerOne"></span></div>
                 <ul>
-                    <li>Rock</li>
-                    <li>Paper</li>
-                    <li>Scissors</li>
+                    <li class= "rock">Rock</li>
+                    <li class ="paper">Paper</li>
+                    <li class ="scissors">Scissors</li>
                 </ul>
         </div>
         <div class = "playerContainer">
-            <div id = "playerTwo">Player Two:</div>
+            <div id = "playerTwo">Player Two: </div>
             <ul>
-                <li>Rock</li>
-                <li>Paper</li>
-                <li>Scissors</li>
+                <li class ="rock">Rock</li>
+                <li class = "paper">Paper</li>
+                <li class ="scissors">Scissors</li>
             </ul>
         </div>
+        <!--form to create a chat-->
+        <!-- <div id = "chat">
+            <form name = "message" action = "">
+                <div class="input-group">
+                    <input name ="usermsg" type = "text" id = "usermsg" size ="63">
+                    <input id="submitmsg" type = "submit" id = "submitmsg">
+                </div>          
+            </form>
+        </div> -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src= "assets/javascript/app.js" ></script>
   
 </body>
