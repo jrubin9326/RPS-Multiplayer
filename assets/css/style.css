@@ -42,3 +42,13 @@ input[type="submit"] {
 h2 {
     text-align: center; 
 }
+#usermsg {
+    display:block;
+    float:left; 
+    margin:100px 20px 20px 250px;
+    
+}
+
+#submitmsg {
+    margin-top:100px; 
+}

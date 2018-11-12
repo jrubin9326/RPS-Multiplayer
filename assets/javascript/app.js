@@ -18,6 +18,8 @@
 
 //global variables
 var playerOneChoice ;
+var playerOneWin;
+var playerTwoWin
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBUzClX_NxCqGXDswwFfk7GuHG719hbxPo",
@@ -62,7 +64,8 @@ $("#submitBtn").on("click", function(event){
 }); 
 
 
-database.ref().on("child_added", function(childSnapshot){
+database.ref().on("value", function(snapshot){
+    if (Object.keys(snapshot.val().indexOf() > -1)) {
     playerOne = (childSnapshot.val().name)
     $("#playerOne").text(playerOne)
 // function to handle errors
@@ -70,3 +73,22 @@ database.ref().on("child_added", function(childSnapshot){
     console.log("Errors handled: "+ errorObject.code)
 });
 
+//logic behind game 
+
+if (playerOneChoice === 'rock' && playerTwoChoice === 'paper') {
+    playerOneWin++
+} else if (playerOneChoice === 'paper' && playerTwoChoice === 'rock') {
+    playerTwoWin ++
+} else if (playerOneChoice === 'scissors'&& playerTwoChoice === 'paper') {
+    playerOne ++
+} else if (playerOneChoice === 'paper' && playerTwoChoice === 'scissor') {
+    playerTwoWin ++
+} else if (playerOneChoice === 'paper' && playerTwoChoice === 'paper') {
+    console.log("tie")
+} else if (playerOneChoice === 'scissor' && playerTwoChoice === 'scissor') {
+    console.log("tie") 
+} else if (playerOneChoice === 'rock' && playerTwoChoice === 'rock') {
+    console.og(tie)
+} else if (playerOneChoice === 'rock' && playerTwoChoice === 'scissor') {
+    playerOneWin ++
+}
