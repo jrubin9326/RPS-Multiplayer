@@ -1,4 +1,4 @@
-* {
+body {
     background-color: green;
 }
 
@@ -23,3 +23,19 @@ input {
 ::placeholder {
     color: white; 
 }
+
+input[type="submit"] {
+    float:right;
+    position: absolute; 
+    margin-left:650px; 
+    color:white; 
+    background-color:green;
+}
+
+.playerContainer {
+    border: 2px solid black; 
+    width: 50%; 
+    float:left; 
+    text-align: center;
+}
+
