@@ -16,7 +16,8 @@
      }
  }
 
-
+//global variables
+var playerOneChoice ;
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBUzClX_NxCqGXDswwFfk7GuHG719hbxPo",
@@ -42,19 +43,30 @@ var config = {
       con.onDisconnect().remove();
   }; 
 }); 
-  
+//  user can select rock paper or scissors 
+$(".choices").on("click", ".choice", function(){
+   playerOneChoice = ($(this).text())
+   console.log(playerOneChoice)
+   
+})
+
+
 $("#submitBtn").on("click", function(event){
     event.preventDefault();
-    name = $("#name-input").val().trim(); 
+    readyGame.playerOne.name = $("#name-input").val().trim(); 
     console.log(name); 
-    $("#playerOne").text(name); 
-
-//   database.ref("/RPSgame").on("value", function(snapshot){
-//       if (snapshot.child("playerOne").exists() && snapshot.child("pick").exists()) {
-//         name = snapshot.val().name;
-//         pick = snapshot.val().pick; 
-//         //change the HTML to reflect local values
-//         $("#playerOne").text(name);
-      
-
+   database.ref().push({
+       playerOneName:readyGame.playerOne.name,
+       playerOneChoice:playerOneChoice
+   })
 }); 
+
+
+database.ref().on("child_added", function(childSnapshot){
+    playerOne = (childSnapshot.val().name)
+    $("#playerOne").text(playerOne)
+// function to handle errors
+}, function(errorObject) {
+    console.log("Errors handled: "+ errorObject.code)
+});
+
