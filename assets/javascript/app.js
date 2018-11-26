@@ -52,27 +52,27 @@ var config = {
           playerTwoName.text(doc.data().name)
       })
   }); 
- const playerOneName = $("#playerOne");
+const playerOneName = $("#playerOne");
 const playerTwoName = $("#playerTwo"); 
-
-
- function renderPlayer (doc) {
-     playerOneName.text(doc.data().name); 
-
- }
- renderPlayer()
-  var connectionsRef = database.ref("/connections")
-
-  var connectedRef = database.ref(".info/connected");
-  
-  //when the user is connected add them to the connections list
-  connectedRef.on("value", function(snap){
-  if (snap.val()) {
-      var con = connectionsRef.push(true);
-      //remove user from connections when they disconnect
-      con.onDisconnect().remove();
-  }; 
-}); 
+const playerNameInput = $("#name-input").val().trim()
+$("#submitBtn").on("click", function(event){
+    event.preventDefault();
+    //get name of Player one 
+    playerOne = $("#name-input").val().trim(); 
+    console.log(playerOne); 
+    //set collection to reflect name of player one
+    db.collection("playerOne").doc("DbqPsJfxDSqcTL3dlEYs").set({
+     name: playerOne,
+     choice:"Scissors"
+     
+ }).then(function() {
+    playerOneName.text(doc.data().name); ; 
+    console.log("Success")
+ }).catch(function(error){
+     console.log("Error writing document: ", error); 
+ })
+ 
+})
 
 //  user can select rock paper or scissors 
 // $(".choices").on("click", ".choice", function(){
@@ -87,7 +87,7 @@ $("#submitBtn").on("click", function(event){
     event.preventDefault();
     playerOne = $("#name-input").val().trim(); 
     console.log(playerOne); 
-    $("#playerOne").text(playerOne); 
+    // $("#playerOne").text(playerOne); 
 //    database.ref().set({
 //        playerOne
 //    })
