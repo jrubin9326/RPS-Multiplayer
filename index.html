@@ -7,12 +7,13 @@
     <link rel = "stylesheet" type = "text/css" href = "assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+    
     <title>RPS Multiplayer</title>
 </head>
 <body>
   
         <h1>Rock Paper Scissors</h1> 
-        <h2>Payer, to pick your move, click on either rock, paper or scissors!</h2>
+        <h2>Player, to pick your move, click on either rock, paper or scissors!</h2>
         <form>
             <input id ="name-input" type= "text" name= "username" placeholder="Name">
             <input type = "submit" value = "submit" id="submitBtn" >
@@ -27,7 +28,7 @@
                 </ul>
         </div>
         <div class = "playerContainer">
-            <div id = "playerTwo">Player Two: </div>
+            <div>Player Two: <span id = "playerTwo"></span></div>
             <ul>
                 <li class ="rock">Rock</li>
                 <li class = "paper">Paper</li>
@@ -43,7 +44,7 @@
                 </div>          
             </form>
         </div> 
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src= "assets/javascript/app.js" ></script>
   
